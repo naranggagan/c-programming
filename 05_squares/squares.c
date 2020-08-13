@@ -42,7 +42,7 @@ if (coord == offset || coord == (offset+size))
 void squares(int size1, int x_offset, int y_offset, int size2) {
   int w = maximum(size1,(x_offset + size2));//compute the max of size1 and (x_offset + size2).  Call this w
 
-  int h = maximum(y_offset,(y_offset + size2)); //compute the max of size1 and (y_offset + size2).o  Call this h
+  int h = maximum(size1,(y_offset + size2)); //compute the max of size1 and (y_offset + size2).o  Call this h
 
   for(int y=0; y<h;y++)
     {
