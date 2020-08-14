@@ -18,7 +18,7 @@ int monthteller(int months)
 return (months/12);
 }
 
-printPassbook(int i,double initial)
+printPassbook(int i,double initial,int startAge)
 {
 int ageT= startAge+i; 
 int a=yearteller(ageT);
@@ -31,17 +31,17 @@ void retirement (int startAge, double initial, retire_info working, retire_info 
  for(int i=0;i<(working.months+retired.months);i++)
 {
   if(i==0) {
-   printPassbook(i,initial);}
+   printPassbook(i,initial,startAge);}
   
   else if(i<retired.months)
   {
    initial = (initial * working.rate_of_return) + working.contribution + initial;
-   printPassbook(i,initial);
+   printPassbook(i,initial,startAge);
   }
   else
   {
    initial = (initial * retired.rate_of_return) + retired.contribution + initial;
-   printPassbook(i,initial);
+   printPassbook(i,initial,startAge);
   }
 
 }
@@ -49,7 +49,7 @@ void retirement (int startAge, double initial, retire_info working, retire_info 
 }
 int main()
 {
-int startAge=384;
+int startAge=327;
 double initial=21345;
 retire_info working={489 , 1000.0 , 0.004};
 retire_info retired={384 , -4000.0 , 0.001};
