@@ -56,5 +56,5 @@ retire_info retired={384 , -4000.0 , (0.01/12)};
 
 retirement(startAge, initial, working, retired);
  
-
+return 0;
 }
