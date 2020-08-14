@@ -51,7 +51,7 @@ int main()
 {
 int startAge=327;
 double initial=21345;
-retire_info working={489 , 1000.0 , (0.04/12)};
+retire_info working={489 , 1000.0 , 0.00375};
 retire_info retired={384 , -4000.0 , (0.01/12)};
 
 retirement(startAge, initial, working, retired);
