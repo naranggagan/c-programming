@@ -31,7 +31,7 @@ void retirement (int startAge, double initial, retire_info working, retire_info 
 {
 int a=yearteller(startAge);
 int b=monthteller(startAge);
-printf("Age is %3d month %2d you have $%.2lf\n",b,a);
+printf("Age is %3d month %2d.\n",b,a);
 }
 
 int main()
