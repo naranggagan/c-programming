@@ -1,6 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+struct _retire_info
+{int months;
+ double contribution;
+ double rate_of_return;
+};
+typedef struct _retire_info retire_info;
+
 int yearteller(int months)
 {
 return (months%12);
@@ -19,20 +26,13 @@ int b=monthteller(ageT);
 printf("Age %3d month %2d you have $%.2lf\n",a,b,initial);
 }
 
-
-struct _retire_info
-{int months;
- double contribution;
- double rate_of_return;
-};
-typedef struct _retire_info retire_info;
-
-void retirement (int startAge, double initial, retire_info working, retire_info retired)
-{
+void retirement (int startAge, double initial, retire_info working, retire_info retired){
+ 
  for(int i=0;i<(working.months+retired.months);i++)
 {
   if(i==0) {
    printPassbook(i,initial);}
+  
   else if(i<retired.months)
   {
    initial = (initial * working.rate_of_return) + working.contribution + initial;
