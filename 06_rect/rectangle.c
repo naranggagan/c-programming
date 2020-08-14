@@ -15,15 +15,46 @@ int max (int a, int b) {
   return b;
 }
 
-//Declare your rectangle structure here!
+//This structure defines a rectangle using 4 integer inputs
+struct rectangle{
+  int x;
+  int y;
+  int width;
+  int height;
+};
+typedef struct rectangle rectangle;
 
-
+//using this function the inputs are standardized. widths and height values with negative values will be turned positive.
 rectangle canonicalize(rectangle r) {
-  //WRITE THIS FUNCTION
-  return r;
+  if(r.width < 0)
+    {r.x = r.x + r.width;
+     r.width = -r.width;}
+  if(r.height < 0)
+    {r.y = r.y + r.height;
+     r.height = -r.height;}
+ return r;
 }
 rectangle intersection(rectangle r1, rectangle r2) {
-  //WRITE THIS FUNCTION
+  rectangle temp1=canonicalize(r1);
+  rectangle temp2=canonicalize(r2);
+  
+  int left=max(temp1.x,temp2.x);
+  int right=min(temp1.x+temp1.width,temp2.x+temp2.width);
+  int tp=min(temp1.y+temp1.height,temp2.y+temp2.height);
+  int btm=max(temp1.y,temp2.y);
+  int wdth=right-left;
+  int ht=tp-btm;
+  if(wdth<0 || ht<0)
+    {
+      //setting the width and height when it was actually negative to be zero so that they can easily be segrigated as a case
+      wdth=0;
+      ht=0;
+    }
+  //setting the changed values to the new variables after determining the intersection
+  r1.x=left;
+  r1.y=btm;
+  r1.width=wdth;
+  r1.height=ht;
   return r1;
 }
 
