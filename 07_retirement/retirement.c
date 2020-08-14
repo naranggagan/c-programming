@@ -23,7 +23,7 @@ void printPassbook(int i,double initial,int startAge)
 int ageT= startAge+i; 
 int a=yearteller(ageT);
 int b=monthteller(ageT);
-printf("Age %3d month %2d you have $%.2lf\n",a,b,initial);
+printf("Age %3d month %2d you have $%.2lf\n",b,a,initial);
 }
 
 void retirement (int startAge, double initial, retire_info working, retire_info retired){
