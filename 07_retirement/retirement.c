@@ -18,7 +18,7 @@ int monthteller(int months)
 return (months/12);
 }
 
-printPassbook(int i,double initial,int startAge)
+void printPassbook(int i,double initial,int startAge)
 {
 int ageT= startAge+i; 
 int a=yearteller(ageT);
