@@ -8,8 +8,7 @@ return (months%12);
 
 int monthteller(int months)
 {
-int b=months/12;
-return b;
+return (months/12);
 }
 
 /*calculator()
@@ -36,7 +35,7 @@ printf("Age is %3d month %2d.\n",b,a);
 
 int main()
 {
-int startAge=327;
+int startAge=384;
 double initial=21345;
 retire_info working={489 , 1000.0 , 0.004};
 retire_info retired={384 , -4000.0 , 0.001};
