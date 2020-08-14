@@ -33,7 +33,7 @@ void retirement (int startAge, double initial, retire_info working, retire_info 
   if(i==0) {
    printPassbook(i,initial,startAge);}
   
-  else if(i<retired.months)
+  else if(i<=working.months)
   {
    initial = (initial * working.rate_of_return) + working.contribution + initial;
    printPassbook(i,initial,startAge);
