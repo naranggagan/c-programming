@@ -6,7 +6,6 @@
 
 void assert_card_valid(card_t c) {
 assert((c.value >= 2 && c.value <= VALUE_ACE) && (c.suit >= SPADES && c.suit <= CLUBS));
-
 }
 
 const char * ranking_to_string(hand_ranking_t r) {
@@ -25,7 +24,7 @@ const char * ranking_to_string(hand_ranking_t r) {
 }
 
 char value_letter(card_t c) {
-  \*char x='0';
+  char x;
   if(c.value>=2 && c.value<=9) { x='0'+c.value; }
   else if(c.value == 10) { x='0'; }
   else if(c.value == VALUE_JACK) { x='J'; }
