@@ -71,6 +71,14 @@ card_t card_from_letters(char value_let, char suit_let) {
 }
 
 card_t card_from_num(unsigned c) {
-  card_t temp;
-  return temp;
+assert(c>=0 && c<52);
+  card_t ans={0,0};
+  ans.suit=c%4;
+  if(c>7){
+    ans.value=c/4;
+  }
+  else{
+    ans.value=(52+c)/4;
+  }
+  return ans;
 }
