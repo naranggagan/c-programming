@@ -10,6 +10,7 @@ int main() {
   int array4[] = {2, 4, 3, 6, 10, 15, -1, 7, 8, 2};
   int array5[] = {-2};
   int array6[] = {2,2,2,3};
+  int array7[] = {1,1,1,1};
   if (maxSeq(NULL, 0)) {
     printf("Failed on NULL\n");
     exit(EXIT_FAILURE);
